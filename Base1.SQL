@@ -3,9 +3,9 @@ CREATE TABLE UserUc(
     UserName VARCHAR(100),
     Password VARCHAR(32),
     CreatedDate DATETIME,
-    UpdatedBY DATETIME,
+    UpdatedDate DATETIME,
     CreatedBy INTEGER,
-    UpdatedB INTEGER,
+    UpdatedBy INTEGER,
     Active BIT
 );
 
@@ -14,7 +14,7 @@ CREATE TABLE Organizer(
     Name VARCHAR(50),
     CreatedDate DATETIME,
     CreatedBy INTEGER,
-    UpdatedB INTEGER,
+    UpdatedBy INTEGER,
     UpdatedDate DATETIME,
     Active BIT
 );
@@ -28,7 +28,7 @@ CREATE TABLE EventUc(
     CreatedDate  DATETIME,
     UpdatedDAte DATETIME,
     CreatedBy INTEGER,
-    UpdatedB INTEGER,
+    UpdatedBy INTEGER,
     Active BIT 
 );
 
@@ -46,7 +46,7 @@ CREATE TABLE GuestEvent(
     GuestId INTEGER IDENTITY (1,1) PRIMARY KEY,
     EventUcId INTEGER ,
     CreatedDate DATETIME, 
-    UpdatedB INTEGER,
+    UpdatedBy INTEGER,
     Active BIT  
 );
 
@@ -57,7 +57,7 @@ CREATE TABLE Guest(
     CreatedDate DATETIME,
     UpdatedDate DATETIME,
     CreatedBy INTEGER,
-    UpdatedB INTEGER,
+    UpdatedBy INTEGER,
     Active BIT 
 );
 
@@ -74,23 +74,23 @@ CREATE TABLE StatusAssitance(
     Active BIT 
 );
 
-INSERT INTO UserUc (UserName,Password,CreatedBy,UpdatedB) VALUES ('ricky','1232342',1,1);
-INSERT INTO UserUc (UserName,Password,CreatedBy,UpdatedB) VALUES ('Martin','1232542',2,2);
-INSERT INTO UserUc (UserName,Password,CreatedBy,UpdatedB) VALUES ('Miguel','1232322',3,3);
-INSERT INTO UserUc (UserName,Password,CreatedBy,UpdatedB) VALUES ('Laura','1235342',4,4);
-INSERT INTO UserUc (UserName,Password,CreatedBy,UpdatedB) VALUES ('Vene','1232442',5,5);
+INSERT INTO UserUc (UserName,Password,CreatedBy,UpdatedBy) VALUES ('ricky','1232342',1,1);
+INSERT INTO UserUc (UserName,Password,CreatedBy,UpdatedBy) VALUES ('Martin','1232542',2,2);
+INSERT INTO UserUc (UserName,Password,CreatedBy,UpdatedBy) VALUES ('Miguel','1232322',3,3);
+INSERT INTO UserUc (UserName,Password,CreatedBy,UpdatedBy) VALUES ('Laura','1235342',4,4);
+INSERT INTO UserUc (UserName,Password,CreatedBy,UpdatedBy) VALUES ('Vene','1232442',5,5);
 
-INSERT INTO Organizer (Name,CreatedBy,UpdatedB) VALUES ('UC',1,1);
-INSERT INTO Organizer (Name,CreatedBy,UpdatedB) VALUES ('CCB',2,2);
-INSERT INTO Organizer (Name,CreatedBy,UpdatedB) VALUES ('ITT',3,3);
-INSERT INTO Organizer (Name,CreatedBy,UpdatedB) VALUES ('ITM',4,4);
-INSERT INTO Organizer (Name,CreatedBy,UpdatedB) VALUES ('ITC',5,5);
+INSERT INTO Organizer (Name,CreatedBy,UpdatedBy) VALUES ('UC',1,1);
+INSERT INTO Organizer (Name,CreatedBy,UpdatedBy) VALUES ('CCB',2,2);
+INSERT INTO Organizer (Name,CreatedBy,UpdatedBy) VALUES ('ITT',3,3);
+INSERT INTO Organizer (Name,CreatedBy,UpdatedBy) VALUES ('ITM',4,4);
+INSERT INTO Organizer (Name,CreatedBy,UpdatedBy) VALUES ('ITC',5,5);
 
-INSERT INTO EventUc (Name,OrganizerId,Observations,DurationDays,CreatedBy,UpdatedB) VALUES ('Programacion',1,'Computadoras funcionando',4,1,1);
-INSERT INTO EventUc (Name,OrganizerId,Observations,DurationDays,CreatedBy,UpdatedB) VALUES ('Matematicas',2,'Mesas limpias',5,2,2);
-INSERT INTO EventUc (Name,OrganizerId,Observations,DurationDays,CreatedBy,UpdatedB) VALUES ('Congreso Mecatronica',3,'Proyectores funcionando',6,4,4);
-INSERT INTO EventUc (Name,OrganizerId,Observations,DurationDays,CreatedBy,UpdatedB) VALUES ('Congreso Electronica',1,'Laboratorio con herramientas',6,5,5);
-INSERT INTO EventUc (Name,OrganizerId,Observations,DurationDays,CreatedBy,UpdatedB) VALUES ('Congreso Fisica',1,'Proyectores funcionando',6,5,5);
+INSERT INTO EventUc (Name,OrganizerId,Observations,DurationDays,CreatedBy,UpdatedBy) VALUES ('Programacion',1,'Computadoras funcionando',4,1,1);
+INSERT INTO EventUc (Name,OrganizerId,Observations,DurationDays,CreatedBy,UpdatedBy) VALUES ('Matematicas',2,'Mesas limpias',5,2,2);
+INSERT INTO EventUc (Name,OrganizerId,Observations,DurationDays,CreatedBy,UpdatedBy) VALUES ('Congreso Mecatronica',3,'Proyectores funcionando',6,4,4);
+INSERT INTO EventUc (Name,OrganizerId,Observations,DurationDays,CreatedBy,UpdatedBy) VALUES ('Congreso Electronica',1,'Laboratorio con herramientas',6,5,5);
+INSERT INTO EventUc (Name,OrganizerId,Observations,DurationDays,CreatedBy,UpdatedBy) VALUES ('Congreso Fisica',1,'Proyectores funcionando',6,5,5);
 
 INSERT INTO EventDay (EventUcId,Schedule,Observations) VALUES (1,20,'Matutino');
 INSERT INTO EventDay (EventUcId,Schedule,Observations) VALUES (2,10,'Matutino');
@@ -110,14 +110,14 @@ INSERT INTO Assitance (GuestId,EventDayId,StatusAssitanceId) VALUES (3,3,3);
 INSERT INTO Assitance (GuestId,EventDayId,StatusAssitanceId) VALUES (4,4,4);
 INSERT INTO Assitance (GuestId,EventDayId,StatusAssitanceId) VALUES (5,5,5); 
 
-INSERT INTO GuestEvent (EventUcId,UpdatedB) VALUES (1,1);
-INSERT INTO GuestEvent (EventUcId,UpdatedB) VALUES (2,2);
-INSERT INTO GuestEvent (EventUcId,UpdatedB) VALUES (3,3);
-INSERT INTO GuestEvent (EventUcId,UpdatedB) VALUES (4,4);
-INSERT INTO GuestEvent (EventUcId,UpdatedB) VALUES (5,5);
+INSERT INTO GuestEvent (EventUcId,UpdatedBy) VALUES (1,1);
+INSERT INTO GuestEvent (EventUcId,UpdatedBy) VALUES (2,2);
+INSERT INTO GuestEvent (EventUcId,UpdatedBy) VALUES (3,3);
+INSERT INTO GuestEvent (EventUcId,UpdatedBy) VALUES (4,4);
+INSERT INTO GuestEvent (EventUcId,UpdatedBy) VALUES (5,5);
 
-INSERT INTO Guest (Name,LastName,CreatedBy,UpdatedB) VALUES ('Keyla','Martinez Gomez',1,1);
-INSERT INTO Guest (Name,LastName,CreatedBy,UpdatedB) VALUES ('Mariana','San Fernandez',2,2);
-INSERT INTO Guest (Name,LastName,CreatedBy,UpdatedB) VALUES ('Erick','Gomez Gamez',3,3);
-INSERT INTO Guest (Name,LastName,CreatedBy,UpdatedB) VALUES ('Rosario','Martinez Gomez',4,4);
-INSERT INTO Guest (Name,LastName,CreatedBy,UpdatedB) VALUES ('Alan','Perez Martinez',5,5);
+INSERT INTO Guest (Name,LastName,CreatedBy,UpdatedBy) VALUES ('Keyla','Martinez Gomez',1,1);
+INSERT INTO Guest (Name,LastName,CreatedBy,UpdatedBy) VALUES ('Mariana','San Fernandez',2,2);
+INSERT INTO Guest (Name,LastName,CreatedBy,UpdatedBy) VALUES ('Erick','Gomez Gamez',3,3);
+INSERT INTO Guest (Name,LastName,CreatedBy,UpdatedBy) VALUES ('Rosario','Martinez Gomez',4,4);
+INSERT INTO Guest (Name,LastName,CreatedBy,UpdatedBy) VALUES ('Alan','Perez Martinez',5,5);
